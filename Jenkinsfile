@@ -5,6 +5,7 @@ pipeline {
       steps {
         echo 'Placeholder'
         sh 'echo Edited Placeholder'
+        sh './gradlew build'
       }
     }
 
@@ -18,6 +19,7 @@ pipeline {
 
     stage('Testing A') {
       steps {
+        sh './gradlew check'
         echo 'Running Unit Tests'
         sleep 5
       }

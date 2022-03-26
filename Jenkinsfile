@@ -17,9 +17,6 @@ pipeline {
     }
 
     stage('Testing A') {
-      agent {
-        label 'java'
-      }
       steps {
         echo 'Running Unit Tests'
         sleep 5

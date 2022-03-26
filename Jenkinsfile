@@ -1,51 +1,26 @@
 pipeline {
-  agent {
-    label 'java'
-  }
+  agent any
   stages {
-    stage('Buzz Build') {
-      environment {
-        LOCAL_STAGE_VAR = '1'
-      }
+    stage('Fluffy Build') {
       steps {
-        echo 'Bee name is $BUZZ_NAME'
-        sh 'echo "Worker name $BUZZ_NAME"'
-        sh 'echo "Workspace location is $WORKSPACE"'
-        archiveArtifacts '*'
+        echo 'Placeholder'
+        sh 'echo Edited Placeholder'
       }
     }
 
-    stage('Buzz Test') {
-      parallel {
-        stage('Buzz Test') {
-          steps {
-            sh './jenkins/test-all.sh'
-            junit '**/surefire-reports/**/*.xml'
-          }
-        }
-
-        stage('Testing A') {
-          agent {
-            label 'test'
-          }
-          steps {
-            echo 'Running Unit Tests'
-            sleep 5
-          }
-        }
-
-        stage('Testing B') {
-          steps {
-            echo 'Running Int Tests'
-            sleep 10
-          }
-        }
-
+    stage('Fluffy test') {
+      steps {
+        echo 'Placeholder'
+        sh 'sleep 5'
+        sh './jenkins/build.sh'
       }
     }
 
-  }
-  environment {
-    BUZZ_NAME = 'Worker Bee'
+    stage('Fluffy deploy') {
+      steps {
+        echo 'Placeholder'
+      }
+    }
+
   }
 }

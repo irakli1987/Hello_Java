@@ -16,10 +16,13 @@ pipeline {
       }
     }
 
-    stage('Fluffy deploy') {
+    stage('Testing A') {
+      agent {
+        label 'java'
+      }
       steps {
-        echo 'Placeholder'
-        sh './jenkins/test-all.sh'
+        echo 'Running Unit Tests'
+        sleep 5
       }
     }
 

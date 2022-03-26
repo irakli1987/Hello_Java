@@ -11,7 +11,6 @@ pipeline {
         echo 'Bee name is $BUZZ_NAME'
         sh 'echo "Worker name $BUZZ_NAME"'
         sh 'echo "Workspace location is $WORKSPACE"'
-        archiveArtifacts '*'
       }
     }
 
@@ -21,16 +20,6 @@ pipeline {
           steps {
             sh './jenkins/test-all.sh'
             junit '**/surefire-reports/**/*.xml'
-          }
-        }
-
-        stage('Testing A') {
-          agent {
-            label 'test'
-          }
-          steps {
-            echo 'Running Unit Tests'
-            sleep 5
           }
         }
 

@@ -12,7 +12,7 @@ pipeline {
       steps {
         echo 'Placeholder'
         sh 'sleep 5'
-        sh './jenkins/build.sh'
+        sh 'echo pwd'
       }
     }
 

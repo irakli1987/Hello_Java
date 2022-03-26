@@ -11,7 +11,6 @@ pipeline {
         echo 'Bee name is $BUZZ_NAME'
         sh 'echo "Worker name $BUZZ_NAME"'
         sh 'echo "Workspace location is $WORKSPACE"'
-        sh './jenkins/build.sh'
         archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true, onlyIfSuccessful: true)
       }
     }

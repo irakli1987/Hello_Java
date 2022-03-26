@@ -19,6 +19,9 @@ pipeline {
     stage('Fluffy deploy') {
       steps {
         echo 'Placeholder'
+        sh '''./jenkins/test-all.sh
+
+'''
       }
     }
 

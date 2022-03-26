@@ -11,7 +11,7 @@ pipeline {
         echo 'Bee name is $BUZZ_NAME'
         sh 'echo "Worker name $BUZZ_NAME"'
         sh 'echo "Workspace location is $WORKSPACE"'
-        archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true, onlyIfSuccessful: true)
+        archiveArtifacts 'target/*.jar'
       }
     }
 

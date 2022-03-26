@@ -27,7 +27,7 @@ pipeline {
 
         stage('Testing A') {
           agent {
-            label 'jre8'
+            label 'test'
           }
           steps {
             echo 'Running Unit Tests'
